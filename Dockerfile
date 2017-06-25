@@ -1,8 +1,9 @@
 FROM alpine:3.6
 MAINTAINER Sergey Savchenko <skymlife@yandex.ru>
 
-RUN apk add --update transmission-daemon ca-certificates openssl && \
-    update-ca-certificates && rm -rf /var/cache/apk/*
+RUN apk add --update transmission-daemon ca-certificates openssl tzdata && \
+    update-ca-certificates && rm -rf /var/cache/apk/* && \
+    cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 ADD ./start.sh /start.sh
 ADD ./settings.example.json /settings.example.json
