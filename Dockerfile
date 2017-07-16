@@ -1,7 +1,8 @@
 FROM alpine:3.6
 MAINTAINER Sergey Savchenko <skymlife@yandex.ru>
 
-RUN apk add --update transmission-daemon ca-certificates openssl tzdata wget && \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+    apk add --update transmission-daemon ca-certificates openssl tzdata wget && \
     update-ca-certificates && rm -rf /var/cache/apk/* && \
     cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
