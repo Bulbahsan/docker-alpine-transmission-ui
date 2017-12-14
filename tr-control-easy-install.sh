@@ -4,9 +4,9 @@ webFolder=""
 orgindex="index.original.html"
 index="index.html"
 tmpFolder="/tmp/tr-web-control"
-packname="transmission-control-full.tar.gz"
+packname="master.tar.gz"
 host="https://github.com/ronggang/transmission-web-control/raw/master/release/"
-downloadurl="$host$packname"
+downloadurl="https://github.com/ronggang/transmission-web-control/archive/master.tar.gz"
 if [ ! -d "$tmpFolder" ]; then
 	mkdir -p "$tmpFolder"
 fi
@@ -43,7 +43,7 @@ if [ $folderIsExist = 1 ]; then
       		      mv "$webFolder/$index" "$webFolder/$orgindex"
       	fi
       	# 复制文件到
-      	cp -r web "$rootFolder"
+      	cp -r src "$rootFolder"
         find "$rootFolder" -type d -exec chmod o+rx {} \;
         find "$rootFolder" -type f -exec chmod o+r {} \;
       	echo "Done."
