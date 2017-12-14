@@ -43,7 +43,8 @@ if [ $folderIsExist = 1 ]; then
       		      mv "$webFolder/$index" "$webFolder/$orgindex"
       	fi
       	# 复制文件到
-      	cp -r src "$rootFolder"
+	mv src web
+      	cp -r web "$rootFolder"
         find "$rootFolder" -type d -exec chmod o+rx {} \;
         find "$rootFolder" -type f -exec chmod o+r {} \;
       	echo "Done."
