@@ -43,6 +43,7 @@ if [ $folderIsExist = 1 ]; then
       		      mv "$webFolder/$index" "$webFolder/$orgindex"
       	fi
       	# 复制文件到
+	cd transmission-web-control-master
 	mv src web
       	cp -r web "$rootFolder"
         find "$rootFolder" -type d -exec chmod o+rx {} \;
